@@ -1,61 +1,59 @@
 # App Notepad (Notevault)
 
-Aplikasi catatan aman dan terdesentralisasi dengan fitur enkripsi, obrolan kolaborasi real-time, dan penyimpanan brankas rahasia secara lokal maupun cloud via Firebase.
+Aplikasi catatan aman dan terdesentralisasi dengan fitur enkripsi, obrolan kolaborasi real-time, dan penyimpanan brankas rahasia secara mandiri via Firebase.
 
 ## Fitur Utama & Cara Penggunaan
 
-Aplikasi ini memiliki beberapa fitur unggulan yang terbagi dalam berbagai menu:
+Aplikasi ini memiliki beberapa fitur unggulan yang terbagi dalam berbagai menu produktivitas:
 
 1. **Catatan (Notes) & Checklist**
-   - **Pembuatan Catatan Lengkap:** Anda bisa membuat catatan harian dengan dukungan format huruf (tebal, miring, dll) menggunakan fitur penulisan interaktif (*VisualTransformation*).
-   - **To-Do List/Checklist:** Memudahkan Anda menyusun daftar tugas atau belanjaan harian Anda yang bisa dipantau progresnya secara rapi.
+   - **Catatan Format Penuh:** Anda bisa menyusun draf rapih dan membuat catatan keseharian dengan dukungan ragam format penulisan (Markdown Visual).
+   - **Pengelola Tugas (Checklist):** Memudahkan Anda merekap seluruh rencana kegiatan atau daftar kebutuhan agar gampang diselesaikan.
    
 2. **Brankas Rahasia (Unified Vault)**
-   - **Enkripsi Lokal:** Seluruh data krusial dalam brankas diamankan dengan enkripsi super aman. Gunakan autentikasi Biometrik (Sidik Jari) atau PIN khusus yang sudah dikustomisasi untuk membukanya.
-   - **Password Generator:** Anda juga dapat menggunakan generator pintar di dalam rincian keamanan untuk membuatkan kombinasi kata sandi super aman yang bisa disalin instan untuk keperluan registrasi.
+   - **Proteksi Canggih:** Lupakan kekhawatiran karena semua data rahasia dilindungi oleh pin/segel biometrik. Enkripsi mandiri diberlakukan untuk kerahasiaan catatan maupun daftar *password* penting.
+   - **Password Generator:** Anda juga dapat menggunakan perangkat cerdas pembuat kombinasi *password* tangguh hanya dengan satu kali klik.
 
-3. **Obrolan & Kolaborasi (Terintegrasi)**
-   - **Chatting Real-Time (Desentralisasi):** Jalin percakapan atau kolaborasi secara *real-time* dan responsif (tanpa delay). Semua obrolan ini didukung langsung oleh sistem Firebase.
-   - **Sistem Notifikasi Pintar:** Dapatkan pemberitahuan Android asli (*push notification* latar belakang) kapanpun Anda mendapat pesan atau setiap ada pembaruan aktivitas khusus di proyek ini.
-
-4. **Fitur Siluman & Penyamaran**
-   - Aplikasi ini dilengkapi proteksi layar penyamaran ekstra *(Stealth Calculator)*. Cobalah ketikkan kombinasi rahasia `8888=` dari layar log in / setelan keamanan rahasia Anda untuk membuka kunci akses brankas terdalam.
+3. **Obrolan & Kolaborasi antar Perangkat**
+   - **Chatting Real-Time (Desentralisasi):** Jalin percakapan atau perbarui kolaborasi sinkron (tanpa delay). Pesan ini langsung ditangani oleh database Firebase pribadi.
+   - **Notifikasi Latar Belakang:** Anda takkan ketinggalan peringatan pesan meski layar dalam keadaan mati, notifikasi *real-time* akan selalu menyelaraskan kolaborasi Anda.
 
 ---
 
-## Panduan Setup Firebase & Koneksi Database
+## Panduan Custom Firebase Setup (Langsung dalam Aplikasi)
 
-Agar fitur **Chat Real-Time** dan **Sinkronisasi Otomatis** berhasil berfungsi seutuhnya tanpa *force close* (error), Anda wajib mendaftarkan layanan dari Google Firebase sebagai backend database kita. Jangan lewatkan satu pun langkah berikut:
+Sistem ini bersifat mandiri dan transparan (Decentralized Server). **Anda tidak perlu menggunakan Android Studio** atau membongkar kode aplikasi. 
 
-### 1. Memeriksa Proyek Lokal
-1. Buka **Android Studio** -> Pilih *File* -> *Open* -> Cari dan pilih folder utama aplikasi (`App Notepad`).
-2. Jangan mengganti Struktur atau Paket *Package Name* awal (`com.eostech.notepad`). Tunggu sesaat hingga proses pencarian indeks dan sinkronisasi `Gradle` awal selesai.
+Fitur Sinkronisasi dan Obrolan Kolaborasi di aplikasi bisa langsung digerakkan menggunakan Server *Firebase* pribadi Anda. Cukup lakukan pengaturan kilat berikut lalu masukkan izinnya di menu setelan aplikasi:
 
-### 2. Membuat Server di Firebase
-1. Buka website [Firebase Console](https://console.firebase.google.com/) melalui browser Anda (Login pakai akun Google Anda).
-2. Klik besar-besar tombol **"Create a Project"** (Buat proyek) lalu ketikkan nama bebas seperti *NotevaultServer* atau *NotepadBackend*. Setujui persyaratan Firebase dan klik *Continue* hingga proyek selesai dirakit.
+### Langkah 1: Buat Server Firebase Anda
+1. Buka halaman [Firebase Console](https://console.firebase.google.com/) melalui browser di ponsel maupun PC Anda.
+2. Klik tombol raksasa **"Create a Project"** (Buat proyek) lalu isikan nama unik (misal: *NotevaultServer*).
+3. Anda bisa mematikan/melewatkan fitur *Google Analytics* jika tidak butuh analisis data. Lalu tekan **Create Project** (Buat Proyek).
 
-### 3. Tautkan Firebase ke Aplikasi Android Kita
-1. Masuk ke halaman muka Dashboard Firebase (tepat setelah proyek terbuat), temukan ilustrasi *ikon Android* untuk menambahkan tipe aplikasi Android ➡️ Klik ikon tersebut.
-2. Pada isian penting **Android package name** isi persis sesuai dengan sistem: 
-   👉 `com.eostech.notepad`
-3. Tekan persetujuan **Register app** (Daftarkan web/app).
-4. Klik tombol simpan **Download `google-services.json`**.
-5. Salin alias Copy *file json* yang baru saja Anda donwnload tersebut. Pindahkan ke dalam Android Studio persis di bagian / jalur `App Notepad/app/`. Atau seret dari folder download Anda menuju bagian menu tulisan `app` (Project Explorer) di samping kiri Android Studio Anda. Pastikan letaknya selevel dengan file `build.gradle.kts`.
-6. Klik *Next* terus-menerus hingga Anda dialihkan kembali ke dasbor konsol *("Continue to console")*.
+### Langkah 2: Ambil Konfigurasi Aksesnya
+Meskipun aplikasi ini berjalan di perangkat Android, kita cukup menggunakan metode termudah dengan mengambil profil kredensial API.
+1. Begitu dashboard proyek terbuka, temukan dan tekan ikon melengkung **`</>` (Simbol Web)** di halaman tersebut untuk mendaftarkan wadah data.
+2. Beri nama sekadar identifikasi (contoh: *Kunci API*). Lalu klik **Register App**.
+3. Muncul kode *Script / Konfigurasi* (firebaseConfig). Anda cukup mencatat atau menyalin langsung tiga rincian utama ini sejenak:
+   - `apiKey`
+   - `projectId`
+   - `appId`
+4. Tekan *Continue to console*.
 
-### 4. Aktifkan Database Utama (Firestore)
-Fokus ke menu vertikal Firebase di sebelah kiri monitor Anda:
-1. Klik dan rentangkan menu **Build** > Lalu pilih **Firestore Database**.
-2. Sentuh tombol jingga **Create database**.
-3. *Location*: Tentukan letak server basis data yang dekat untuk kecepatan real-time paling maksimal (misal wilayah Asia/Singapura: `asia-southeast1` atau Jakarta `asia-southeast2` jika tersedia).
-4. *Rules / Aturan Keamanan*: Anda wajib  memilih memulainya dalam mode percoban alias opsi **"Start in Test Mode"**. Kenapa? Agar kode di dalam Android Studio bisa langsung diizinkan menulis dan membaca pesan chat tanpa halangan sertifikasi identitas rumit (*Bisa Anda perketat aturannya nanti via tab Rules saat aplikasi sudah 100% rilis publik).*
-5. Klik selesai *Enable*.
+### Langkah 3: Aktifkan Wadah Chat (Firestore)
+1. Dari menu sebelah kiri halaman Firebase, rentangkan menu **Build**, kemudian sentuh bagian **Firestore Database**.
+2. Klik tombol tengah layar **Create database**.
+3. (*Location*) Pilih letak benua terdekat supaya kecepatan real-timenya instan. Pilihannya misal `asia-southeast2` (Jakarta) jika menggunakan pengaturan regional Asia Pasifik.
+4. **Tahap Paling Kritis:** Pada opsi *Aturan Keamanan / Security guidelines*, sangat wajib Anda memulainya dalam status Percobaan, yakni pilih opsi **"Start in test mode"**.
+   - *Kenapa? Agar Aplikasi di handphone punya hak murni untuk mengatur isi pesan obrolan tanpa dibatalkan secara otomatis oleh firewall bawaan Firebase.*
+5. Konfirmasi lalu tekan **Enable / Selesai**.
 
-Berhasil! Komponen backend obrolan *Firebase* kini sukses merespons kode di Android Anda!
+### Langkah 4: Masukkan di Aplikasi
+1. Buka kembali aplikasi **App Notepad** yang sudah terpasang di handphone Anda.
+2. Navigasi menuju halaman **Settings** (Setelan).
+3. Sentuh menu bernama **"Custom Firebase Server"**.
+4. Tempel barisan kunci otentikasi API yang telah kita kumpulkan dari Langkah 2 tadi (`API Key`, `Project ID`, dan `App ID`) ke masing-masing bidang khusus yang ada.
+5. Klik tombol konfirmasi/simpan.
 
-### 5. Simulasikan Aplikasinya
-1. Kembali buka Jendela Proyek dan Terminal **Android Studio**.
-2. Pastikan sekali lagi Anda menyentuh tekan ikon logo Gajah (atau File > **Sync Project with Gradle Files**) supaya mesin pendeteksi plugin Firebase merangkum sinkronisasinya.
-3. Sambungkan perangkat ponsel real via kabel data / Wireless debugging (Atau buka Emulator Virtual). 
-4. Pencet *ikon putar Segitiga (Run)* berwarna Hijau - dan voila! Aplikasi Notepad super canggih Anda akan otomatis merespons notifikasi dan percakapan seketika di peranti Anda!
+Selamat! Obrolan kolaborasi sepenuhnya ditangani secara otonom oleh pusat kendali lokal yang diimpor ke Firebase awan milik Anda sendiri. Bebas perantara, tanpa ada yang menyadap pesan kolaborator Anda!
