@@ -60,7 +60,7 @@ Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur
 2. Klik **Create database**.
 3. Pilih lokasi server yang sama dengan **Realtime Database**, lalu pilih **Start in Production Mode**.
 4. Klik **Create**.
-5. Tunggu hingga database selesai dibuat. Setelah tampil, pastikan tab **Rules** memperlihatkan keterangan *allow read, write: if true;*.
+5. pastikan tab **Rules** *allow read, write: if true;*.
 
 ---
 
@@ -68,7 +68,7 @@ Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur
 Sekarang atur semuanya di dalam aplikasi:
 
 1. Buka **Notevault**.
-2. Masuk ke menu **Pengaturan** (Settings).
+2. Masuk ke menu **Setelan**.
 3. ke bagian **Firebase Setup**.
 4. Isi kolom sesuai dengan data yang Anda salin dari Firebase:
    - **Project ID:** (Tempel *Project ID* dari Tahap 3)
