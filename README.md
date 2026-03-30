@@ -40,11 +40,12 @@ Ikuti langkah-langkah di bawah ini secara teliti dari awal hingga akhir.
    - **Web API Key** (Sederetan teks panjang yang berawalan `AIzaSy...`)
 3. scroll ke bagian **"Your apps"**.
 4. Salin **App ID** (formatnya panjang, dimulai dengan angka 1, contoh: `1:1234567890:android:abc...`).
-*Web API Key NOTE : jika web api key tidak muncul , pilih Add app di bagian your app pilih icon WEB </> dan isi Nickname/nama bebas kemudian Register app setelah itu akan muncul web api key dengan nama apiKey setelah itu pilih continue to console.*
+
+**Web API Key NOTE : jika web api key tidak muncul , pilih Add app di bagian your app pilih icon WEB </> dan isi Nickname/nama bebas kemudian Register app setelah itu akan muncul web api key dengan nama apiKey setelah itu pilih continue to console.**
 
 
 ### TAHAP 4: Mengaktifkan Database (SANGAT PENTING)
-Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur Sinkronisasi dan *Chat* berjalan.
+Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur Sinkronisasi dan *Chat* bekerja.
 
 #### A. Membuat Realtime Database (Untuk URL)
 1. Di panel kiri Firebase bagian **Databases & Storage**, lalu pilih **Realtime Database**.
@@ -76,5 +77,5 @@ Sekarang atur semuanya di dalam aplikasi:
    - **Database URL:** (Tempel Link Realtime Database dari Tahap 4A, pastikan **dimulai dengan https://**)
 5. Klik **Simpan & Terapkan**.
 6. lalu Close aplikasi dari *recent apps* dan buka ulang Aplikasi
-7. masuk ke setting di bagian Kolaborasi, buat Kode Pairing, dan bagikan kode tersebut ke perangkat teman.
+7. masuk ke setelan di bagian Kolaborasi, buat Kode Pairing, dan bagikan kode tersebut ke perangkat teman.
 
