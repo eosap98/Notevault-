@@ -65,7 +65,6 @@ Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur
 ---
 
 ### TAHAP 5: Memasukkan Pengaturan ke Aplikasi
-Sekarang atur semuanya di dalam aplikasi:
 
 1. Buka **Notevault**.
 2. Masuk ke menu **Setelan**.
