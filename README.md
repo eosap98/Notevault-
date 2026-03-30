@@ -26,22 +26,22 @@ Ikuti langkah-langkah di bawah ini secara teliti dari awal hingga akhir.
 4. Masukkan nama proyek bebas (misalnya: `NotepadServerku`).
 5. Matikan (Disable) *Google Analytics* lalu klik **Create Project**.
 
-### TAHAP 2: Mendaftarkan Aplikasi Android
-1. Setelah proyek siap, di halaman beranda Firebase, pilih **Add app** lalu ikon **Android** untuk menambahkan aplikasi.
-2. Di kolom **Android package name**, masukkan wajib persis seperti ini: `com.eostech.notepad`.
-3. Biarkan sisa kolom kosong default saja, lalu klik **Register app**.
-4. Abaikan langkah *Download google-services.json*, langsung klik **Next** terus menerus hingga **Continue to console**.
+### TAHAP 2: Mendaftarkan Jalur Aplikasi
+Karena setup dan integrasi Firebase dilakukan secara manual *langsung* dari dalam aplikasi lewat *Setelan*, Anda **TIDAK PERLU** lagi menautkan atau mendownload file pendukung seperti `google-services.json` atau mendaftarkan versi Android-nya.
+
+Prosesnya dapat diringkas cukup lewat platform *Web* saja agar kuncinya cepat muncul:
+1. Di beranda (*Project Overview*) Firebase Anda, klik tombol **Add app**, lalu pilih langsung ikon **WEB (`</>`)**.
+2. Di bagian form **App nickname**, isi dengan nama bebas (misalnya: `NotevaultAkses`).
+3. Klik tombol **Register app**.
 
 ### TAHAP 3: Mendapatkan Kode Kredensial
-*copy* kredensial untuk dimasukkan ke aplikasi.
-1. Di panel kiri atas, klik **ikon Gerigi (⚙️)** di sebelah tulisan *Project Overview*, lalu pilih **Project settings**.
-2. Pada tab *General*, cari dan salin :
-   - **Project ID** (contoh: `notepadserverku-a1b2`)
-   - **Web API Key** (Sederetan teks panjang yang berawalan `AIzaSy...`)
-3. scroll ke bagian **"Your apps"**.
-4. Salin **App ID** (formatnya panjang, dimulai dengan angka 1, contoh: `1:1234567890:android:abc...`).
-
-**Web API Key NOTE : jika web api key tidak muncul , pilih Add app di bagian your app pilih icon WEB </> dan isi Nickname/nama bebas kemudian Register app setelah itu akan muncul web api key dengan nama apiKey setelah itu pilih continue to console.**
+Setelah menekan tombol *Register app* pada tahap 2 tadi, sistem akan seketika menghasilkan sebuah kotak yang berisi tulisan-tulisan kode (*firebaseConfig*).
+*NOTE: Ini sekaligus menjawab kebingungan jika di masa lalu Web API Key sering tidak terlihat atau disembunyikan di konsol General.*
+1. Lirik ke dalam kotak kode tersebut. Anda wajib melakukan **Salin (copy)** tepat pada tiga rincian utama ini:
+   - Baris teks setelah **`apiKey`** (Ini adalah *Web API Key* Anda).
+   - Baris teks setelah **`projectId`** (Ini adalah *Project ID* Anda).
+   - Baris teks setelah **`appId`** (Ini adalah *App ID* Anda).
+2. Sesudah menyalin ketiganya dengan rapi, silakan klik tombol putih **Continue to console** di sebelah bawah kotak.
 
 
 ### TAHAP 4: Mengaktifkan Database (SANGAT PENTING)
