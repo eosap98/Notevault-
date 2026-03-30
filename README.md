@@ -1,6 +1,6 @@
 # App Notepad (Notevault)
 
-Aplikasi catatan super aman dengan fitur obrolan (chat) dan sinkronisasi data antar perangkat. Semua data rahasia diamankan dengan sidik jari atau PIN. Kerennya, Anda bisa menggunakan server *Firebase* milik Anda sendiri agar obrolan berjalan lancar tanpa campur tangan orang lain.
+Aplikasi catatan AMAN dengan fitur obrolan (chat) menggunakan *firebase* dan sinkronisasi data antar perangkat. Semua data rahasia diamankan dengan sidik jari atau PIN.
 
 ## Fitur Utama Aplikasi
 
@@ -13,18 +13,18 @@ Aplikasi catatan super aman dengan fitur obrolan (chat) dan sinkronisasi data an
 
 ## Panduan Lengkap: Cara Setup Firebase untuk App Notepad
 
-Agar dapat menggunakan fitur kolaborasi (Catatan, Checklist, Password) dan **Chat** , Anda harus membuat server *Cloud* sendiri menggunakan Firebase secara **gratis**. 
+Agar dapat menggunakan fitur kolaborasi (Catatan, Checklist, Password) dan **Chat** , Anda harus membuat server *Cloud* menggunakan Firebase secara **gratis**. 
 
 Ikuti langkah-langkah di bawah ini secara teliti dari awal hingga akhir.
 
 ---
 
 ### TAHAP 1: Membuat Proyek Firebase
-1. Buka browser di komputer/HP dan pergi ke [Firebase Console](https://console.firebase.google.com/).
+1. Buka browser di komputer/HP dan masuk ke [Firebase Console](https://console.firebase.google.com/).
 2. Login menggunakan akun Google.
 3. Klik tombol **Create a Project** (Buat Proyek).
 4. Masukkan nama proyek bebas (misalnya: `NotepadServerku`).
-5. Matikan (Disable) *Google Analytics* jika tidak diperlukan agar lebih cepat, lalu klik **Create Project**.
+5. Matikan (Disable) *Google Analytics* lalu klik **Create Project**.
 
 ### TAHAP 2: Mendaftarkan Aplikasi Android
 1. Setelah proyek siap, di halaman beranda Firebase, pilih **Add app** lalu ikon **Android** untuk menambahkan aplikasi.
@@ -33,19 +33,21 @@ Ikuti langkah-langkah di bawah ini secara teliti dari awal hingga akhir.
 4. Abaikan langkah *Download google-services.json*, langsung klik **Next** terus menerus hingga **Continue to console**.
 
 ### TAHAP 3: Mendapatkan Kode Kredensial
-*copy* 3 kode penting untuk dimasukkan ke aplikasi.
+*copy* kredensial untuk dimasukkan ke aplikasi.
 1. Di panel kiri atas, klik **ikon Gerigi (⚙️)** di sebelah tulisan *Project Overview*, lalu pilih **Project settings**.
 2. Pada tab *General*, cari dan salin :
    - **Project ID** (contoh: `notepadserverku-a1b2`)
    - **Web API Key** (Sederetan teks panjang yang berawalan `AIzaSy...`)
-3. Gulir ke bagian paling bawah ke kotak **"Your apps"**.
+3. scroll ke bagian **"Your apps"**.
 4. Salin **App ID** (formatnya panjang, dimulai dengan angka 1, contoh: `1:1234567890:android:abc...`).
+*Web API Key NOTE : jika web api key tidak muncul , pilih Add app di bagian your app pilih icon WEB </> dan isi Nickname/nama bebas kemudian Register app setelah itu akan muncul web api key dengan nama apiKey setelah itu pilih continue to console.*
+
 
 ### TAHAP 4: Mengaktifkan Database (SANGAT PENTING)
 Aplikasi ini membutuhkan **dua** jenis konfigurasi *database* agar seluruh fitur Sinkronisasi dan *Chat* berjalan.
 
 #### A. Membuat Realtime Database (Untuk URL)
-1. Di panel kiri Firebase, lihat bagian **Databases & Storage**, lalu pilih **Realtime Database**.
+1. Di panel kiri Firebase bagian **Databases & Storage**, lalu pilih **Realtime Database**.
 2. Klik tombol **Create Database**.
 3. **Pilih Lokasi Bebas**
 4. Pilih **Test Mode**, lalu Enable.
@@ -71,9 +73,8 @@ Sekarang atur semuanya di dalam aplikasi:
    - **Project ID:** (Tempel *Project ID* dari Tahap 3)
    - **API Key:** (Tempel *Web API Key* berawalan AIzaSy)
    - **App ID:** (Tempel *App ID* Android)
-   - **Database URL Lengkap:** (Tempel Link Realtime Database dari Tahap 4A, pastikan **dimulai dengan https://**)
+   - **Database URL:** (Tempel Link Realtime Database dari Tahap 4A, pastikan **dimulai dengan https://**)
 5. Klik **Simpan & Terapkan**.
-6. Close aplikasi dari *recent apps* Android Anda.
-7. Buka ulang Aplikasi.
+6. lalu Close aplikasi dari *recent apps* dan buka ulang Aplikasi
+7. masuk ke setting di bagian Kolaborasi, buat Kode Pairing, dan bagikan kode tersebut ke perangkat teman.
 
-Selamat! Kini aplikasi Anda telah memiliki server sendiri yang bebas batasan! Anda tinggal masuk ke bagian Kolaborasi, buat Kode Pairing, dan bagikan kode tersebut ke perangkat teman Anda yang juga telah dimodifikasi pengaturannya dengan kode Firebase Anda!
